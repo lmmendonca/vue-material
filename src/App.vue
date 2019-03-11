@@ -26,14 +26,14 @@
 
       <md-app-content>
         <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEANDRO ALBERTOSR" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="GUSTAVO GUSTAVOSS  " cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 2 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 3 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 4 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 5 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 6 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 7 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 8 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
+        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 9 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
 
       </md-app-content>
     </md-app>
