@@ -1,7 +1,7 @@
 <template>
   <md-card class="hbt-card">
     <md-card-content>
-      <table class="table-card" style="width:100%">
+      <table class="table-card" width="100%" align="block">
         <tr>
           <th class="col-1"></th>
           <th class="col-2"></th>
@@ -10,15 +10,15 @@
         <tr>
           <td class="lin-1">
             <img src="./../../../assets/icons/card/cliente.png">
-            {{ nome }}
+            <span>{{ nome }}</span>
           </td>
           <td class="lin-1">
             <img src="./../../../assets/icons/card/pin.png">
-            {{ empreendimento }}
+            <span>{{ empreendimento }}</span>
           </td>
           <td class="lin-1">
             <img src="./../../../assets/icons/card/status.png">
-            {{ status }}
+            <span>{{ status_negocio }}</span>
           </td>
         </tr>
         <tr>
@@ -28,11 +28,11 @@
           </td>
           <td class="lin-2">
             <img src="./../../../assets/icons/card/imovel.png">
-            {{ imovel }}
+            <span>{{ imovel }}</span>
           </td>
           <td class="lin-2">
             <img src="./../../../assets/icons/card/data-compra.png">
-            {{ data }}
+            <span>{{ data_compra }}</span>
           </td>
         </tr>
       </table>
@@ -41,9 +41,9 @@
 </template>
 
 <script>
-    export default {
-        props: ['nome', 'cpf', 'empreendimento', 'imovel', 'status', 'data']
-    }
+  export default {
+    props: ['nome', 'cpf', 'empreendimento', 'imovel', 'status_negocio', 'data_compra']
+  }
 </script>
 
 <style scoped>
@@ -55,8 +55,13 @@
     padding-bottom: 10px;
   }
 
-  . {
+
+  * {
     font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 15px;
   }
 
 
