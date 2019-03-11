@@ -14,7 +14,7 @@
 
       <md-app-drawer :md-active.sync="menuVisible">
         <md-toolbar class="md-accent toolbar-drawer" md-elevation="0"><img
-          src="assets/images/logo/habitten-logo.png" class="logo-drawer"></md-toolbar>
+          src="./assets/images/logo/habitten-logo.png" class="logo-drawer"></md-toolbar>
 
         <md-list v-for="rota in routes" :key="rota.titulo">
           <md-list-item href="/">
