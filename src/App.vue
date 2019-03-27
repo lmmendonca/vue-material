@@ -24,9 +24,10 @@
         </md-list>
       </md-app-drawer>
 
-      <md-app-content v-for="card of cards" :key="card.id">
-        <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento" status_negocio="APROVADO" :data_compra="card.data"></hbt-card>
-
+      <md-app-content>
+        <li v-for="card of cards" :key="card.id">
+          <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento" status_negocio="APROVADO" :data_compra="card.data"></hbt-card>
+        </li>
       </md-app-content>
     </md-app>
   </div>
@@ -87,6 +88,10 @@
   .logo-drawer {
     max-width: 60px;
     width: auto;
+  }
+
+  * {
+    list-style: none;
   }
 
 </style>
