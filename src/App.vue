@@ -25,16 +25,9 @@
       </md-app-drawer>
 
       <md-app-content>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 1 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 2 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 3 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 4 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 5 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 6 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 7 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 8 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-        <hbt-card nome="LEONARDO MAXIMINO" cpf="086.620.409.18" imovel="LOTE 9 QUADRA 2" empreendimento="RESIDENCIAL PARQUE DO LAGO" status_negocio="APROVADO" data_compra="25/02/2019"></hbt-card>
-
+        <li v-for="card of cards" :key="card.id">
+          <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento" status_negocio="APROVADO" :data_compra="card.data"></hbt-card>
+        </li>
       </md-app-content>
     </md-app>
   </div>
@@ -50,12 +43,20 @@
     data() {
       return {
         menuVisible: false,
-        routes
+        routes,
+        cards: []
+
       }
     },
 
     components: {
       'hbt-card': Card
+    },
+
+    created() {
+      this.$http.get('http://localhost:8080/vendas')
+        .then(res => res.json())
+        .then(cards => this.cards = cards, err => console.log(err))
     }
 
   }
@@ -87,6 +88,10 @@
   .logo-drawer {
     max-width: 60px;
     width: auto;
+  }
+
+  * {
+    list-style: none;
   }
 
 </style>
