@@ -5,17 +5,19 @@
         <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
           <md-icon>menu</md-icon>
         </md-button>
-        <span class="md-title">Sistema Habitten</span>
+        <span class="md-title">Vendas</span>
 
-<!--        <md-field class="filtro">-->
-<!--          <label class="filtro-buscar">Buscar</label>-->
-<!--          <md-input v-model="type"></md-input>-->
-<!--        </md-field>-->
+        <!--        <md-field class="filtro">-->
+        <!--          <label class="filtro-buscar">Buscar</label>-->
+        <!--          <md-input v-model="type"></md-input>-->
+        <!--        </md-field>-->
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-primary toolbar-drawer" md-elevation="0"><img
-          src="./assets/images/logo/habitten-logo.png" class="logo-drawer"></md-toolbar>
+        <md-toolbar class="md-primary toolbar-drawer" md-elevation="0">
+          <span class="md-title">Sistema Habitten</span>
+          <!--          <img src="./assets/images/logo/habitten-logo.png" class="logo-drawer">-->
+        </md-toolbar>
 
         <md-list v-for="rota in routes" :key="rota.titulo">
           <md-list-item href="/">
@@ -27,7 +29,8 @@
 
       <md-app-content>
         <li v-for="card of cards" :key="card.id">
-          <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento" status_negocio="APROVADO" :data_compra="card.data"></hbt-card>
+          <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento"
+                    status_negocio="APROVADO" :data_compra="card.data"></hbt-card>
         </li>
       </md-app-content>
     </md-app>
@@ -71,6 +74,7 @@
   * {
     --md-theme-default-primary: #34495e;
   }
+
   // Demo purposes only
   .md-drawer {
     width: 230px;
