@@ -6,14 +6,15 @@
           <md-icon>menu</md-icon>
         </md-button>
         <span class="md-title">Sistema Habitten</span>
-        <md-field class="filtro">
-          <label class="filtro-buscar">Buscar</label>
-          <md-input v-model="type"></md-input>
-        </md-field>
+
+<!--        <md-field class="filtro">-->
+<!--          <label class="filtro-buscar">Buscar</label>-->
+<!--          <md-input v-model="type"></md-input>-->
+<!--        </md-field>-->
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-accent toolbar-drawer" md-elevation="0"><img
+        <md-toolbar class="md-primary toolbar-drawer" md-elevation="0"><img
           src="./assets/images/logo/habitten-logo.png" class="logo-drawer"></md-toolbar>
 
         <md-list v-for="rota in routes" :key="rota.titulo">
@@ -65,9 +66,11 @@
 <style lang="scss" scoped>
   .md-app {
     max-height: 100%;
-    --md-theme-default-primary: rgba(30, 87, 54, 0.51);
   }
 
+  * {
+    --md-theme-default-primary: #34495e;
+  }
   // Demo purposes only
   .md-drawer {
     width: 230px;
