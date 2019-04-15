@@ -1,5 +1,5 @@
 <template>
-  <md-card class="hbt-card">
+  <md-card class="hbt-card md-clickable" @click="clicado()">
     <md-card-content>
       <div class="md-layout md-gutter md-alignment-center">
 
@@ -56,7 +56,6 @@
 
 <script>
   export default {
-
     props: {
       nome: {
         required: true,
@@ -88,6 +87,12 @@
         type: String
       },
 
+    },
+
+    methods: {
+      clicado() {
+        this.$emit('clicado')
+      }
     }
   }
 </script>

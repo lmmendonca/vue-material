@@ -1,44 +1,21 @@
 <template>
-  <div class="page-container">
-    <md-app md-mode="fixed" class="md-primary">
-      <md-app-toolbar class="md-primary">
-        <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-          <md-icon>menu</md-icon>
-        </md-button>
-        <span class="md-title">Vendas</span>
+  <div>
+    <hbt-layout :rotas="routes" :filtros="cards">
+      <hbt-cadastro-venda>
 
-        <!--        <md-field class="filtro">-->
-        <!--          <label class="filtro-buscar">Buscar</label>-->
-        <!--          <md-input v-model="type"></md-input>-->
-        <!--        </md-field>-->
-      </md-app-toolbar>
-
-      <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-primary toolbar-drawer" md-elevation="0">
-          <span class="md-title">Sistema Habitten</span>
-          <!--          <img src="./assets/images/logo/habitten-logo.png" class="logo-drawer">-->
-        </md-toolbar>
-
-        <md-list v-for="rota in routes" :key="rota.titulo">
-          <md-list-item href="/">
-            <md-icon>{{ rota.icon }}</md-icon>
-            <span class="md-list-item-text">{{ rota.titulo }}</span>
-          </md-list-item>
-        </md-list>
-      </md-app-drawer>
-
-      <md-app-content>
-        <li v-for="card of cards" :key="card.id">
-          <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento"
-                    status_negocio="APROVADO" :data_compra="card.data"></hbt-card>
-        </li>
-      </md-app-content>
-    </md-app>
+      </hbt-cadastro-venda>
+<!--      <li v-for="card of cards" :key="card.id">-->
+<!--        <hbt-card :nome="card.nome" :cpf="card.cpf" :imovel="card.imovel" :empreendimento="card.empreendimento"-->
+<!--                  status_negocio="APROVADO" :data_compra="card.data" @botaoAtivado="edicaoVenda(card.id)"></hbt-card>-->
+<!--      </li>-->
+    </hbt-layout>
   </div>
 </template>
 
 <script>
   import Card from './components/shared/card/Card';
+  import Layout from './components/shared/layout/Layout';
+  import Cadastro from './components/vendas/CadastroVenda'
   import {routes} from "./routes";
 
   export default {
@@ -49,56 +26,32 @@
         menuVisible: false,
         routes,
         cards: []
-
       }
     },
 
     components: {
-      'hbt-card': Card
+      'hbt-card': Card,
+      'hbt-layout': Layout,
+      'hbt-cadastro-venda': Cadastro
     },
 
     created() {
       this.$http.get('http://localhost:8080/vendas')
         .then(res => res.json())
         .then(cards => this.cards = cards, err => console.log(err))
+    },
+
+    methods: {
+      edicaoVenda(cardId){
+        alert("Edição não implementada.")
+      }
+
     }
 
   }
+
 </script>
 
 <style lang="scss" scoped>
-  .md-app {
-    max-height: 100%;
-  }
-
-  * {
-    --md-theme-default-primary: #34495e;
-  }
-
-  // Demo purposes only
-  .md-drawer {
-    width: 230px;
-    max-width: calc(100vw - 125px);
-
-  }
-
-  .md-app-content {
-    height: 100%;
-  }
-
-  .toolbar-drawer {
-    --md-theme-default-accent: rgba(30, 87, 54, 0.55);;
-    justify-content: center;
-
-  }
-
-  .logo-drawer {
-    max-width: 60px;
-    width: auto;
-  }
-
-  * {
-    list-style: none;
-  }
 
 </style>
