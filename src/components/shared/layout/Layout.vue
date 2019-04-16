@@ -2,25 +2,25 @@
   <div class="page-container">
     <md-app md-mode="fixed" class="md-primary">
       <md-app-toolbar class="md-primary">
-        <div class="md-toolbar-row">
-          <div class="md-toolbar-section-start">
+        <div class="md-toolbar-row md-layout">
+          <div class="md-toolbar-section-start  md-layout-item">
             <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
               <md-icon>menu</md-icon>
             </md-button>
             <span class="md-title">Vendas</span>
           </div>
 
-          <md-autocomplete
-            class="search"
+          <md-autocomplete 
+            class="search md-layout-item md-medium-size-45 md-small-size-25 "
             md-layout="box"
             md-options="filtros">
             <label>Buscar...</label>
           </md-autocomplete>
 
-          <div class="md-toolbar-section-end">
+          <div class="md-toolbar-section-end  md-layout-item">
             <div class="separator">
 
-              <md-avatar class="md-avatar-icon md-medium">L
+              <md-avatar class="md-avatar-icon md-medium md-layout-item">L
               </md-avatar>
             </div>
 
@@ -76,7 +76,7 @@
 
 <style lang="scss" scoped>
   .search {
-    max-width: 1200px;
+    max-width: 1000px;
   }
 
   .md-app {
