@@ -15,85 +15,59 @@
 
     <md-steppers :md-active-step.sync="active" md-linear>
       <md-step id="1" md-label="Informações do Cliente" :md-done.sync="first">
-        <div>
-          <div>
-            <span class="md-title">Dados da Pessoa</span>
-            <p></p>
-          </div>
-
-          <span class="md-subhead">Tipo de pessoa:</span>
-          <div class="separator">
-            <md-radio v-model="radio" :value="false" class="md-small">Fisica</md-radio>
-            <md-radio v-model="radio" :value="true" class="md-small">Juridica</md-radio>
-          </div>
-          <div>
-            <md-switch v-model="boolean">Consultar Serasa</md-switch>
-          </div>
-
-          <div>
-            <div class="md-layout md-gutter md-alignment-center">
-              <hbt-cpf></hbt-cpf>
-              <hbt-form name="Nome" type="String"></hbt-form>
-              <hbt-form name="Sobrenome" type="String"></hbt-form>
-              <hbt-form name="Data de Nascimento" type="Date"></hbt-form>
-            </div>
-          </div>
-          <div>
-            <div class="md-layout md-gutter md-alignment-center">
-              <hbt-form name="RG" type="Number"></hbt-form>
-              <hbt-form class="md-layout-item" name="Telefone" type="Number"></hbt-form>
-              <hbt-form name="Email" type="Email"></hbt-form>
-              <hbt-form name="Profissão" type="String"></hbt-form>
-            </div>
-          </div>
-          <div>
-            <div class="md-layout md-gutter md-alignment-left">
-              <div class="md-layout-item md-size-25">
-                <md-field>
-                  <label>Estado Civil</label>
-                  <md-select  name="estadoCivil" id="estadoCivil">
-                    <md-option value="Solteiro">Solteiro</md-option>
-                    <md-option value="Casado">Casado</md-option>
-                    <md-option value="Separado judicialmente">Separado judicialmente</md-option>
-                    <md-option value="Divorciado">Divorciado</md-option>
-                  </md-select>
-                </md-field>
-              </div>
-            </div>
-          </div>
-          <p></p>
-          <div>
-            <span class="md-title">Endereço</span>
-            <p></p>
-          </div>
-
-
+        <div id="dados-cliente">
+          <info-cliente id="info-cliente"></info-cliente>
         </div>
-        <md-button class="md-raised md-primary" @click="setDone('1', '2')">Continuar</md-button>
+
+        <div class="md-layout">
+          <md-button class="md-small md-fixed" @click="addCliente()">
+            <md-icon>add</md-icon>
+            <span>Adicionar Cliente</span>
+          </md-button>
+        </div>
+
+        <div class="md-layout">
+          <md-button class="md-raised md-primary" @click="setDone('1', '2')">Continuar</md-button>
+        </div>
       </md-step>
 
-
-
-
-
       <md-step id="2" md-label="Informações do Imovel" :md-error="secondStepError" :md-done.sync="second">
-        <md-button class="md-raised md-primary" @click="setDone('2','3')">Done</md-button>
+        <div>
+          <info-imovel>
+
+          </info-imovel>
+        </div>
+        <md-button class="md-raised md-accent" @click="retorna('2','1')">Voltar</md-button>
+        <md-button class="md-raised md-primary" @click="setDone('2','3')">Continuar</md-button>
       </md-step>
 
       <md-step id="3" md-label="Contrato" :md-done.sync="third">
-        <md-button class="md-raised md-primary" @click="setDone('3','4')">Done</md-button>
+        <div>
+          <contrato>
+
+          </contrato>
+        </div>
+        <md-button class="md-raised md-accent" @click="retorna('3','2')">Voltar</md-button>
+        <md-button class="md-raised md-primary" @click="setDone('3','4')">Continuar</md-button>
       </md-step>
 
       <md-step id="4" md-label="Revisão" :md-done.sync="four">
-        <md-button class="md-raised md-primary" @click="setDone('4')">Done</md-button>
+        <div>
+          <revisao>
+          </revisao>
+        </div>
+        <md-button class="md-raised md-accent" @click="retorna('4','3')">Voltar</md-button>
+        <md-button class="md-raised md-primary" @click="setDone('4')">Concluir</md-button>
       </md-step>
     </md-steppers>
   </div>
 </template>
 
 <script>
-  import Cpf from "../shared/form/Cpf";
-  import HabittenForm from "../shared/form/HabittenFormValidation";
+  import InfoCliente from "./steps/InfoCliente"
+  import InfoImovel from "./steps/InfoImovel"
+  import Contrato from "./steps/Contrato"
+  import Revisao from "./steps/Revisao"
 
   export default {
 
@@ -104,13 +78,13 @@
       second: false,
       third: false,
       secondStepError: null,
-      radio: false,
-      boolean: false
     }),
 
     components: {
-      'hbt-cpf': Cpf,
-      'hbt-form': HabittenForm
+      'info-cliente': InfoCliente,
+      'info-imovel': InfoImovel,
+      'contrato': Contrato,
+      'revisao': Revisao
     },
 
     methods: {
@@ -123,9 +97,27 @@
           this.active = index;
         }
       },
+
+      retorna(id, index){
+
+        this[id] = false;
+
+        if (index) {
+          this.active = index;
+        }
+      },
+
       setError() {
         this.secondStepError = "This is an error!";
+      },
+
+      addCliente(){
+        var clone = document.getElementById('info-cliente').cloneNode(true);
+        var destino = document.getElementById('dados-cliente');
+
+        destino.append(clone)
       }
+
     }
   };
 </script>
